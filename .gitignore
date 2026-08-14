@@ -1,0 +1,7 @@
+gk
+e2
+all
+*.o
+*.out
+__pycache__/
+.DS_Store
