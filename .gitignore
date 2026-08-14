@@ -5,3 +5,5 @@ all
 *.out
 __pycache__/
 .DS_Store
+files/
+files.zip
