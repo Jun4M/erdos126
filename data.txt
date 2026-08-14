@@ -37,7 +37,12 @@
 #   E2:  2  4  6  7  8  10  11
 # NEITHER alternative in Problem 1 holds: the two differ at k = 3, 4 but
 # agree again at k = 5, 6, 7.  Smallest counterexample is k = 3.
-# Verification: k=4 over 84 prime sets at X=6000; k=6 over 56 sets at X=8000;
-# k=7 over 84 sets at X=10000.
+# Verification (exhaustive over all prime sets containing 2, pool = primes
+# below 30; values are maxima within the search range, hence lower bounds
+# in general):
+#   k=4  84/84 prime sets at X=6000
+#   k=6  56/56 at X=1500, re-checked at X=8000
+#   k=7  84/84 at X=800, re-checked at X=3000 and X=10000
+# Values were stable as X increased.
 # Wu Problem 3 ("infinitely many k with E2(k+1) = 2E2(k)?"): doubling occurs
 # only at k = 1 (2 -> 4) in the computed range; 4 -> 6 -> 7 -> 8 afterwards.
