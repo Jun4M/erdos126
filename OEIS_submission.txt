@@ -58,7 +58,7 @@
 %H  L. Szalay and V. Ziegler, On an S-unit variant of Diophantine m-tuples,
     Publ. Math. Debrecen 83 (2013), 97-121.
 
-%H  Junho Lee, <a href="https://github.com/jun4M/erdos126">Search code and data</a>
+%H  Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a>
 
 %K  nonn,hard,more
 

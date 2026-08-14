@@ -40,12 +40,15 @@ Wu also defines E2(k), the same quantity with (a+b)/gcd(a,b) in place of (a+b),
 and asks (Problem 1) whether E1(k) = E2(k) for all k >= 2. Searching over all
 prime sets containing 2 (pool: primes below 30) gives
 
-| k | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|
-| E1(k) | 2 | 4 | 5 | 6 | 8 |
-| E2(k) | 2 | 4 | 6 | 7 | 8 |
+| k | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| E1(k) | 2 | 4 | 5 | 6 | 8 | 10 | 11 |
+| E2(k) | 2 | 4 | 6 | 7 | 8 | 10 | 11 |
 
-so the answer appears to be **no**, with smallest counterexample at k = 3:
+The two differ at k = 3 and k = 4 but **agree again at k = 5, 6, 7**, so
+*neither* alternative in Wu's Problem 1 holds — it is not true that
+E1(k) = E2(k) for all k >= 2, nor that they always differ. The smallest
+counterexample to equality is k = 3:
 
     A = {1, 3, 7, 9, 21, 63} = divisors of 63,   S = {2, 5, 11}
 
@@ -65,6 +68,11 @@ The specialisation n = 2^a gives E2(omega(prod_{m=1..a}(2^m+1))) >= a+1, but thi
 is only linear in k (by Zsygmondy each 2^m+1 contributes about one new prime), so
 it is far weaker than the trivial construction. Divisor sets beat {1,...,m} only
 at k = 3.
+
+A second witness for E2(3) = 6 with a different structure is
+{35, 49, 77, 175, 275, 385} with S = {2, 3, 31}; and E2(4) = 7 is attained both
+by {2,23,46,138,322,598,782} with S = {2,3,5,7} and by {1,7,14,31,49,119,161}
+with S = {2,3,5,19}. So the separation is not an isolated accident.
 
 Wu's Problem 3 asks whether E2(k+1) = 2E2(k) for infinitely many k. In the
 computed range doubling happens only at k = 1 (2 -> 4).
