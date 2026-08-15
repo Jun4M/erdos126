@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 typedef unsigned long long u64;
-static int X, NP, KMAX;
+static int X, KMAX;
 static u64 pf[600];              // pf[s] = bitmask of prime factors of s
 static int primes[64], np;
 static int bestAll[70];          // bestAll[k] = best |A| using <= k primes

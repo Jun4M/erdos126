@@ -20,7 +20,8 @@
 
 %C  a(1) and a(2) are proven. Terms a(3)-a(13) are the maxima found by
     exhaustive search over all A contained in [1,X] and over all n-element
-    prime sets containing 2 drawn from the primes below 60; terms a(14)-a(17)
+    prime sets containing 2, the pool ranging from {2,3,...,23} to {2,3,...,53}
+    depending on n; terms a(14)-a(17)
     come from a restricted search over the first n primes together with their
     single-swap neighbours, and are lower bounds. All terms are lower bounds in
     general; values were stable as X increased. All values were independently

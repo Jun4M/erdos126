@@ -45,7 +45,8 @@ A-number, then replace A______ below with that number.
 
 %C  Terms are the maxima found by exhaustive search over all A contained in
     [1,X] and over all n-element prime sets containing 2 (2 must lie in S once
-    |A| >= 3), for X up to 10000. They are lower bounds in general; values
+    |A| >= 3), the pool of primes ranging from {2,3,...,23} to {2,3,...,43}
+    depending on n, with X up to 10000. They are lower bounds in general; values
     were stable as X increased. All values were independently reproduced by a
     second implementation using a different clique algorithm and a different
     smoothness test, and every witness set was re-checked by direct

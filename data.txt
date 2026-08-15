@@ -18,8 +18,26 @@
 16  31   partial         {2,...,53}                                     1,3,5,6,9,12,13,15,17,21,25,27,29,33,37,39,41,45,51,57,63,69,75,87,99,111,123,135,147,159,183
 17  32   partial         {2,...,59}                                     1,2,3,4,6,7,8,10,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,50,52,56,62,74
 
+#
+# Prime-set search pools actually used for E1 (S always contains 2 when |A|>=3):
+#   k   pool                                          #sets     X
+#   1-4 all subsets of {2,3,...,37}                C(12,k)    3000
+#   5   2 + (k-1) of {3,...,31}                        210    3000
+#   6   2 + (k-1) of {3,...,23}                         56    3000
+#   7   2 + (k-1) of {3,...,29}                         84     400
+#   8   2 + (k-1) of {3,...,31}                        120     250, 600
+#   9   2 + (k-1) of {3,...,37}                        165     300
+#  10   2 + (k-1) of {3,...,41}                        220     300
+#  11   2 + (k-1) of {3,...,43}                        286     300
+#  12   2 + (k-1) of {3,...,47}                        364     300
+#  13   2 + (k-1) of {3,...,53}                        455     250, 600, 1500
+#  14   2 + (k-1) of {3,...,53}                        105     250, 600
+#  15-17  first k primes plus single-swap neighbours (57-61 sets)  -- LOWER BOUNDS
+# Rows 1-14 are exhaustive over all sets in the stated pool.
+#
+
 # E2(k) = same but with (a+b)/gcd(a,b) in place of (a+b)
-# Searched over all prime sets containing 2, pool = primes below 50.
+# Searched over all prime sets containing 2; the pool varies with k (see below).
 # k  E2(k)  witness                                          S
 1    2   1,3                                              {2}
 2    4   1,3,5,15                                         {2,3}
@@ -43,10 +61,18 @@
 # agree at k = 5, 6, 7, 8, 10, 11.  The separation is intermittent with no
 # evident pattern.  Smallest counterexample to equality is k = 3.
 #
-# Verification (E2): exhaustive over all prime sets containing 2 drawn from
-#   primes below 50 --  k=4: 84 sets at X=6000; k=8: 120 sets at X=400;
-#   k=9: 165 sets at X=300 (re-checked at X=600, 1500);
-#   k=10: 715 sets at X=300; k=11: 286 sets at X=250.
+# Prime-set search pools actually used for E2 (S always contains 2):
+#   k   pool (besides 2)                              #sets    X
+#   3   3..31   (10 primes)                              45    8000
+#   4   3..29   ( 9 primes)                               84    6000
+#   5   3..23   ( 8 primes)                               70    3000
+#   6   3..23   ( 8 primes)                               56    1500
+#   7   3..29   ( 9 primes)                               84     800
+#   8   3..31   (10 primes)                              120     400
+#   9   3..37   (11 primes)                              165     300  (re-checked 600, 1500)
+#  10   3..43   (13 primes)                              715     300
+#  11   3..43   (13 primes)                              286     250
+# Each row is an exhaustive sweep over all C(pool, k-1) sets.
 #
 # CROSS-VERIFICATION.  All values above were independently reproduced by a
 # second implementation written in Python with deliberately different choices:
