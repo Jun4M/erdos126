@@ -19,11 +19,11 @@ S-Diophantine tuples of Szalay–Ziegler.
 | E1(k) | 2 | 4 | 5 | 6 | 8 | 10 | 11 | 14 | 15 | 17 | 20 | 21 | 24 | 26 | 28 | 31 | 32 |
 
 - k = 1, 2 are theorems of Wu (2019).
-- k = 3..13: exhaustive over all A in [1,X] **and** over all k-element prime
-  sets containing 2, with the pool ranging from {2,3,...,23} to {2,3,...,53}
+- k = 3..14: exhaustive over all A in [1,X] **and** over all k-element prime
+  sets containing 2, with the pool ranging from {2,3,...,23} to {2,3,...,59}
   depending on k; see `data.txt` for the exact pool, number of sets and search
   bound X at each k.
-- k = 14..17: restricted search (first k primes plus single-swap neighbours);
+- k = 15..17: restricted search (first k primes plus single-swap neighbours);
   these are lower bounds.
 
 2 must lie in S once |A| >= 3, since two of any three integers share parity.
