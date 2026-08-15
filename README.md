@@ -43,8 +43,8 @@ S-Diophantine tuples of Szalay–Ziegler.
 Wu also defines E2(k), the same quantity with (a+b)/gcd(a,b) in place of (a+b),
 and asks (Problem 1) whether E1(k) = E2(k) for all k >= 2. Searching
 exhaustively over prime sets containing 2 — the pool varies with k, from
-{3,...,23} up to {3,...,43}; see `data.txt` for the exact pool, number of sets
-and search bound X used at each k — gives
+{2,3,...,23} up to {2,3,...,43}; see `data.txt` for the exact pool, number of
+sets and search bound X used at each k — gives
 
 | k | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
 |---|---|---|---|---|---|---|---|---|---|----|----|

@@ -65,16 +65,16 @@
 # evident pattern.  Smallest counterexample to equality is k = 3.
 #
 # Prime-set search pools actually used for E2 (S always contains 2):
-#   k   pool (besides 2)                              #sets    X
-#   3   3..31   (10 primes)                              45    8000
-#   4   3..29   ( 9 primes)                               84    6000
-#   5   3..23   ( 8 primes)                               70    3000
-#   6   3..23   ( 8 primes)                               56    1500
-#   7   3..29   ( 9 primes)                               84     800
-#   8   3..31   (10 primes)                              120     400
-#   9   3..37   (11 primes)                              165     300  (re-checked 600, 1500)
-#  10   3..43   (13 primes)                              715     300
-#  11   3..43   (13 primes)                              286     250
+#   k   pool                                          #sets     X
+#   3   2 + (k-1) of {3,...,31}                         45    8000
+#   4   2 + (k-1) of {3,...,29}                         84    6000
+#   5   2 + (k-1) of {3,...,23}                         70    3000
+#   6   2 + (k-1) of {3,...,23}                         56    1500
+#   7   2 + (k-1) of {3,...,29}                         84     800
+#   8   2 + (k-1) of {3,...,31}                        120     400
+#   9   2 + (k-1) of {3,...,37}                        165     300  (re-checked 600, 1500)
+#  10   2 + (k-1) of {3,...,43}                        715     300
+#  11   2 + (k-1) of {3,...,43}                        286     250
 # Each row is an exhaustive sweep over all C(pool, k-1) sets.
 #
 # CROSS-VERIFICATION.  All values above were independently reproduced by a
