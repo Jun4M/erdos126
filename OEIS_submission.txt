@@ -23,7 +23,10 @@
     prime sets containing 2 drawn from the primes below 60; terms a(14)-a(17)
     come from a restricted search over the first n primes together with their
     single-swap neighbours, and are lower bounds. All terms are lower bounds in
-    general; values were stable as X increased.
+    general; values were stable as X increased. All values were independently
+    reproduced by a second implementation using a different clique algorithm
+    and a different smoothness test, and every witness set was re-checked by
+    direct factorisation.
 
 %C  In every case found the extremal set uses exactly n distinct primes. For
     1 <= n <= 12 and 14 <= n <= 17 the optimal prime set is {p_1,...,p_n}, but

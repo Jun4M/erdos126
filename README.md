@@ -40,12 +40,13 @@ Wu also defines E2(k), the same quantity with (a+b)/gcd(a,b) in place of (a+b),
 and asks (Problem 1) whether E1(k) = E2(k) for all k >= 2. Searching over all
 prime sets containing 2 (pool: primes below 30) gives
 
-| k | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---|---|---|---|---|---|---|---|
-| E1(k) | 2 | 4 | 5 | 6 | 8 | 10 | 11 |
-| E2(k) | 2 | 4 | 6 | 7 | 8 | 10 | 11 |
+| k | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
+|---|---|---|---|---|---|---|---|---|---|----|----|
+| E1(k) | 2 | 4 | 5 | 6 | 8 | 10 | 11 | 14 | 15 | 17 | 20 |
+| E2(k) | 2 | 4 | 6 | 7 | 8 | 10 | 11 | 14 | 16 | 17 | 20 |
 
-The two differ at k = 3 and k = 4 but **agree again at k = 5, 6, 7**, so
+The two differ at k = 3, 4 and 9 but **agree at k = 5, 6, 7, 8, 10, 11** — the
+separation is intermittent, with no evident pattern — so
 *neither* alternative in Wu's Problem 1 holds — it is not true that
 E1(k) = E2(k) for all k >= 2, nor that they always differ. The smallest
 counterexample to equality is k = 3:
@@ -72,10 +73,30 @@ at k = 3.
 A second witness for E2(3) = 6 with a different structure is
 {35, 49, 77, 175, 275, 385} with S = {2, 3, 31}; and E2(4) = 7 is attained both
 by {2,23,46,138,322,598,782} with S = {2,3,5,7} and by {1,7,14,31,49,119,161}
-with S = {2,3,5,19}. So the separation is not an isolated accident.
+with S = {2,3,5,19}. So the separation is not an isolated accident. At k = 9,
+E2(9) = 16 is attained by the all-odd set
+{1,3,5,9,13,15,17,21,25,27,29,39,51,63,75,87} with S = {2,3,...,23}, while
+E1(9) = 15.
 
 Wu's Problem 3 asks whether E2(k+1) = 2E2(k) for infinitely many k. In the
 computed range doubling happens only at k = 1 (2 -> 4).
+
+## Verification
+
+All values were computed twice, by implementations with deliberately different
+designs:
+
+| | `search_fixed_primes.c` / `search_E1_E2.c` | `verify_independent.py` |
+|---|---|---|
+| candidate pool | restricted to `SmoothSet - a1` | none; full adjacency bitmask |
+| clique search | DFS with size bound | Tomita with greedy-colouring bound |
+| smoothness | lookup in a sieved smooth set | trial division |
+
+28 of 28 values agreed. Separately, `verify_data.py` re-checks every witness
+set listed in `data.txt` from scratch — factoring each pairwise value with
+sympy, with no clique code involved — against its claimed cardinality, omega
+and gcd. This second check caught one transcription error (a spurious 41 in
+the k = 13 witness) which is now fixed; all 30 witness sets now pass.
 
 ## Files
 
@@ -87,6 +108,8 @@ computed range doubling happens only at k = 1 (2 -> 4).
 | `sweep_prime_sets.py` | exhaustive sweep over k-element prime sets |
 | `sweep_neighbourhood.py` | restricted sweep: first k primes plus single-swap neighbours |
 | `divisor_construction.py` | divisor-set constructions for E2; source of the k=3 counterexample to Wu's Problem 1 |
+| `verify_independent.py` | second, independent max-clique implementation used for cross-checking |
+| `verify_data.py` | re-verifies every witness in `data.txt` by direct factorisation |
 
 ## Build and run
 

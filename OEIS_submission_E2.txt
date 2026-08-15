@@ -5,7 +5,7 @@ A-number, then replace A______ below with that number.
     gcd(A) = 1 such that the product of (a+b)/gcd(a,b) over all pairs
     a != b in A has at most n distinct prime factors.
 
-%D  2, 4, 6, 7, 8, 10, 11
+%D  2, 4, 6, 7, 8, 10, 11, 14, 16, 17, 20
 
 %O  1
 
@@ -15,12 +15,13 @@ A-number, then replace A______ below with that number.
 %C  Wu asked (Problem 1) whether E_1(n) = E_2(n) for all n >= 2, where E_1 is
     the analogous quantity without dividing by the gcd (A______), and also
     whether the extremal set families always differ. Computation shows that
-    neither alternative holds: E_1 and E_2 differ at n = 3 and n = 4, but
-    agree again at n = 5, 6, 7.
+    neither alternative holds: E_1 and E_2 differ at n = 3, 4 and 9, but
+    agree at n = 5, 6, 7, 8, 10 and 11. The separation is intermittent, with
+    no evident pattern.
 
-%C    n     : 1  2  3  4  5   6   7
-%C    E_1(n): 2  4  5  6  8  10  11
-%C    E_2(n): 2  4  6  7  8  10  11
+%C    n     : 1  2  3  4  5   6   7   8   9  10  11
+%C    E_1(n): 2  4  5  6  8  10  11  14  15  17  20
+%C    E_2(n): 2  4  6  7  8  10  11  14  16  17  20
 
 %C  a(3) = 6 is attained by the set of divisors of 63, A = {1,3,7,9,21,63},
     with S = {2,5,11}: the values (a+b)/gcd(a,b) are 4, 8, 10, 16, 22, 64.
@@ -33,6 +34,9 @@ A-number, then replace A______ below with that number.
 %C  A second, structurally different witness for a(3) = 6 is
     {35,49,77,175,275,385} with S = {2,3,31}.
 
+%C  a(9) = 16 is attained by {1,3,5,9,13,15,17,21,25,27,29,39,51,63,75,87}
+    with S = {2,3,5,7,11,13,17,19,23}; all sixteen elements are odd.
+
 %C  a(4) = 7 also has at least two witnesses: {2,23,46,138,322,598,782} with
     S = {2,3,5,7}, and {1,7,14,31,49,119,161} with S = {2,3,5,19}.
 
@@ -42,7 +46,10 @@ A-number, then replace A______ below with that number.
 %C  Terms are the maxima found by exhaustive search over all A contained in
     [1,X] and over all n-element prime sets containing 2 (2 must lie in S once
     |A| >= 3), for X up to 10000. They are lower bounds in general; values
-    were stable as X increased.
+    were stable as X increased. All values were independently reproduced by a
+    second implementation using a different clique algorithm and a different
+    smoothness test, and every witness set was re-checked by direct
+    factorisation.
 
 %e  a(3) = 6: for A = {1,3,7,9,21,63} the fifteen values (a+b)/gcd(a,b) are
     4, 8, 10, 22, 64, 10, 4, 8, 22, 16, 4, 10, 10, 8, 4, involving only the

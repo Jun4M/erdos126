@@ -12,37 +12,49 @@
 10  17   exhaustive      {2,...,29}                                     1,2,3,5,6,7,9,11,12,13,15,17,21,23,27,33,43
 11  20   exhaustive      {2,...,31}                                     1,3,5,6,9,13,15,17,21,25,27,29,33,39,51,63,75,87,99,111
 12  21   exhaustive      {2,...,37}                                     1,2,3,5,6,7,8,9,11,13,15,17,19,21,23,25,27,29,31,43,49
-13  24   exhaustive      {2,...,37,43}  (NOT first 13 primes!)          1,2,3,5,7,8,9,11,13,14,15,17,19,20,23,25,29,31,35,37,41,43,49,55,61
+13  24   exhaustive      {2,...,37,43}  (NOT first 13 primes!)          1,2,3,5,7,8,9,11,13,14,15,17,19,20,23,25,29,31,35,37,43,49,55,61
 14  26   partial         {2,...,43}                                     1,2,3,5,7,8,9,11,13,14,15,17,19,21,23,25,27,29,31,35,37,41,43,49,55,61
 15  28   partial         {2,...,47}                                     1,2,3,5,7,8,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,47,49,55,61
 16  31   partial         {2,...,53}                                     1,3,5,6,9,12,13,15,17,21,25,27,29,33,37,39,41,45,51,57,63,69,75,87,99,111,123,135,147,159,183
 17  32   partial         {2,...,59}                                     1,2,3,4,6,7,8,10,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,50,52,56,62,74
 
 # E2(k) = same but with (a+b)/gcd(a,b) in place of (a+b)
-# Searched over all prime sets containing 2, pool = primes below 30.
-# k  E2(k)  witness                              note
-1    2   1,3
-2    4   1,3,5,15
-3    6   1,3,7,9,21,63        S={2,5,11}   <-- divisors of 63; E1(3)=5, so E1 != E2 ALREADY AT k=3
-3    6   35,49,77,175,275,385 S={2,3,31}   <-- second, structurally different extremal set
-4    7   2,23,46,138,322,598,782  S={2,3,5,7}   = 23*{1,2,6,14,26,34} + {2};  E1(4)=6
-4    7   1,7,14,31,49,119,161     S={2,3,5,19}  <-- second witness for k=4
-5    8   1,2,5,9,13,19,23,31  S={2,3,5,7,11}    E1(5)=8, so E1 = E2 here
-6   10   1,2,3,5,7,9,13,19,23,47          S={2,...,13}   E1(6)=10, equal
-7   11   1,3,5,6,7,11,15,19,21,29,49      S={2,...,17}   E1(7)=11, equal
+# Searched over all prime sets containing 2, pool = primes below 50.
+# k  E2(k)  witness                                          S
+1    2   1,3                                              {2}
+2    4   1,3,5,15                                         {2,3}
+3    6   1,3,7,9,21,63                                    {2,5,11}    <-- divisors of 63
+3    6   35,49,77,175,275,385                             {2,3,31}    <-- second, different structure
+4    7   2,23,46,138,322,598,782                          {2,3,5,7}   = 23*{1,2,6,14,26,34} + {2}
+4    7   1,7,14,31,49,119,161                             {2,3,5,19}  <-- second witness
+5    8   1,2,5,9,13,19,23,31                              {2,...,11}
+6   10   1,2,3,5,7,9,13,19,23,47                          {2,...,13}
+7   11   1,3,5,6,7,11,15,19,21,29,49                      {2,...,17}
+8   14   1,2,4,6,10,14,16,18,26,34,38,50,62,94            {2,...,19}
+9   16   1,3,5,9,13,15,17,21,25,27,29,39,51,63,75,87      {2,...,23}  <-- all odd
+10  17   1,2,3,5,6,7,9,11,12,13,15,17,21,23,27,33,43      {2,...,29}
+11  20   1,3,5,6,9,13,15,17,21,25,27,29,33,39,51,63,75,87,99,111   {2,...,31}
 
 # Summary vs Wu (2019) Problem 1 ("is E1(k) = E2(k) for all k >= 2?"):
-#   k :  1  2  3  4  5   6   7
-#   E1:  2  4  5  6  8  10  11
-#   E2:  2  4  6  7  8  10  11
-# NEITHER alternative in Problem 1 holds: the two differ at k = 3, 4 but
-# agree again at k = 5, 6, 7.  Smallest counterexample is k = 3.
-# Verification (exhaustive over all prime sets containing 2, pool = primes
-# below 30; values are maxima within the search range, hence lower bounds
-# in general):
-#   k=4  84/84 prime sets at X=6000
-#   k=6  56/56 at X=1500, re-checked at X=8000
-#   k=7  84/84 at X=800, re-checked at X=3000 and X=10000
-# Values were stable as X increased.
-# Wu Problem 3 ("infinitely many k with E2(k+1) = 2E2(k)?"): doubling occurs
-# only at k = 1 (2 -> 4) in the computed range; 4 -> 6 -> 7 -> 8 afterwards.
+#   k :  1  2  3  4  5   6   7   8   9  10  11
+#   E1:  2  4  5  6  8  10  11  14  15  17  20
+#   E2:  2  4  6  7  8  10  11  14  16  17  20
+# NEITHER alternative in Problem 1 holds: the two differ at k = 3, 4, 9 but
+# agree at k = 5, 6, 7, 8, 10, 11.  The separation is intermittent with no
+# evident pattern.  Smallest counterexample to equality is k = 3.
+#
+# Verification (E2): exhaustive over all prime sets containing 2 drawn from
+#   primes below 50 --  k=4: 84 sets at X=6000; k=8: 120 sets at X=400;
+#   k=9: 165 sets at X=300 (re-checked at X=600, 1500);
+#   k=10: 715 sets at X=300; k=11: 286 sets at X=250.
+#
+# CROSS-VERIFICATION.  All values above were independently reproduced by a
+# second implementation written in Python with deliberately different choices:
+#   - no candidate-pool reduction (full adjacency bitmask over [1,X]) vs the
+#     C code's restriction of candidates to (SmoothSet - a1);
+#   - Tomita maximum-clique search with a greedy-colouring bound vs the C
+#     code's plain DFS with a size bound;
+#   - smoothness by trial division vs by sieving a precomputed smooth set.
+# 28 of 28 values agreed.  Separately, every witness set listed here was
+# re-checked from scratch (factoring each pairwise value with sympy, with no
+# clique code involved) for cardinality, omega, gcd = 1 and distinctness.
