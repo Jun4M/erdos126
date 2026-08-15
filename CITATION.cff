@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Search code and computed values for E_1(k) and E_2(k), Erdos Problem #126"
+abstract: >-
+  Exhaustive and restricted searches for the largest sets of positive
+  integers whose pairwise sums have few distinct prime factors, extending
+  computations of Wu (2019) and Fueredi (2024). Includes an independent
+  second implementation used for cross-verification.
+authors:
+  - family-names: Lee
+    given-names: Junho
+    orcid: "https://orcid.org/0009-0008-1540-7694"
+    affiliation: "Kyung Hee University"
+license: MIT
+repository-code: "https://github.com/Jun4M/erdos126"
+keywords:
+  - number theory
+  - Erdos problems
+  - smooth numbers
+  - S-unit equations
+  - integer sequences

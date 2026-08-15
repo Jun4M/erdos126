@@ -1,3 +1,5 @@
+<!-- DOI badge: fill in after Zenodo release -->
+
 # Erdős Problem #126 — computational search
 
 Code accompanying computed values of
