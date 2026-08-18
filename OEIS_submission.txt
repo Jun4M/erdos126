@@ -1,71 +1,43 @@
-%N  Largest cardinality of a set A of distinct positive integers such that
-    Product_{a != b in A} (a+b) has at most n distinct prime factors.
+%N Largest cardinality of a set A of distinct positive integers such that Product_{a != b in A} (a+b) has at most n distinct prime factors.
 
-%D  2, 4, 5, 6, 8, 10, 11, 14, 15, 17, 20, 21, 24, 26, 28, 31, 32
+%D 2, 4, 5, 6, 8, 10, 11, 14, 15, 17, 20, 21, 24, 26, 28, 31, 32
 
-%O  1
+%O 1
 
-%C  Erdos and Turan (1934) proved a(n) < 3*2^(n-1). Wu (2019) improved this to
-    a(n) <= 2^n and proved a(1) = 2 and a(2) = 4.
+%C Erdos and Turan (1934) proved a(n) < 3*2^(n-1). Wu (2019) improved this to a(n) <= 2^n and proved a(1) = 2 and a(2) = 4.
 
-%C  Erdos and Turan conjectured that a(n) = O(n^(1+eps)) for every eps > 0.
+%C Erdos and Turan conjectured that a(n) = O(n^(1+eps)) for every eps > 0.
 
-%C  Equivalently, a(n) is the largest m for which there exist m distinct
-    positive integers all of whose pairwise sums are S-units for some set S of
-    n primes; by analogy with the multiplicative S-Diophantine tuples of Szalay
-    and Ziegler, such a set may be called an additive S-Diophantine m-tuple.
+%C Equivalently, a(n) is the largest m for which there exist m distinct positive integers all of whose pairwise sums are S-units for some set S of n primes; by analogy with the multiplicative S-Diophantine tuples of Szalay and Ziegler, such a set may be called an additive S-Diophantine m-tuple.
 
-%C  If |A| >= 3 then 2 must belong to S, since two of any three integers have
-    equal parity.
+%C If |A| >= 3 then 2 must belong to S, since two of any three integers have equal parity.
 
-%C  a(1) and a(2) are proven. Terms a(3)-a(14) are the maxima found by
-    exhaustive search over all A contained in [1,X] and over all n-element
-    prime sets containing 2, the pool ranging from {2,3,...,23} to {2,3,...,59}
-    depending on n; terms a(15)-a(17) come from a restricted search over the
-    first n primes together with their single-swap neighbours, and are lower
-    bounds. All terms are lower bounds in
-    general; values were stable as X increased. All values were independently
-    reproduced by a second implementation using a different clique algorithm
-    and a different smoothness test, and every witness set was re-checked by
-    direct factorisation.
+%C a(1) and a(2) are proven. Terms a(3)-a(14) are the maxima found by exhaustive search over all A contained in [1,X] and over all n-element prime sets containing 2, the pool ranging from {2,3,...,23} to {2,3,...,59} depending on n; terms a(15)-a(17) come from a restricted search over the first n primes together with their single-swap neighbours. All terms are lower bounds in general; values were stable as X increased. All values were independently reproduced by a second implementation using a different clique algorithm and a different smoothness test, and every witness set was re-checked by direct factorisation.
 
-%C  In every case found the extremal set uses exactly n distinct primes. For
-    1 <= n <= 12 and 14 <= n <= 17 the optimal prime set is {p_1,...,p_n}, but
-    at n = 13 it is not: {2,3,5,7,11,13,17,19,23,29,31,37,43} (omitting 41)
-    gives 24, whereas the first 13 primes give only 23, despite the former
-    having fewer available smooth numbers.
+%C In every case found the extremal set uses exactly n distinct primes. For 1 <= n <= 12 and 14 <= n <= 17 the optimal prime set is {p_1,...,p_n}, but at n = 13 it is not: {2,3,5,7,11,13,17,19,23,29,31,37,43} (omitting 41) gives 24, whereas the first 13 primes give only 23, despite the former having fewer available smooth numbers.
 
-%C  Fueredi (2024) computed the equivalent quantity f(n) for n = 5..8 by
-    computer search, obtaining a(3) = 5 (conjecturally), a(4) = 6 and
-    a(5) >= 8; the extremal sets found there agree with those found here.
+%C Fueredi (2024) computed the equivalent quantity f(n) for n = 5..8 by computer search, obtaining a(3) = 5 (conjecturally), a(4) = 6 and a(5) >= 8; the extremal sets found there agree with those found here.
 
-%C  This is Erdos Problem #126, where the question is whether f(n)/log(n) tends
-    to infinity, f being essentially the inverse function of this sequence.
+%C This is Erdos Problem #126, where the question is whether f(n)/log(n) tends to infinity, f being essentially the inverse function of this sequence.
 
-%e  a(2) = 4: for A = {1,5,7,11} the pairwise sums are 6, 8, 12, 12, 16, 18,
-    involving only the primes 2 and 3. Wu (2019) showed that the only extremal
-    sets for n = 2 are {1,5,7,11} and {1,7,17,47}.
+%e a(2) = 4: for A = {1,5,7,11} the pairwise sums are 6, 8, 12, 12, 16, 18, involving only the primes 2 and 3. Wu (2019) showed that the only extremal sets for n = 2 are {1,5,7,11} and {1,7,17,47}.
 
-%e  a(8) = 14 is attained by A = {1,2,4,6,10,14,16,18,26,34,38,50,62,94} with
-    S = {2,3,5,7,11,13,17,19}.
+%e a(8) = 14 is attained by A = {1,2,4,6,10,14,16,18,26,34,38,50,62,94} with S = {2,3,5,7,11,13,17,19}.
 
-%H  T. F. Bloom, <a href="https://www.erdosproblems.com/126">Erdos Problem #126</a>
+%H T. F. Bloom, <a href="https://www.erdosproblems.com/126">Erdos Problem #126</a>
 
-%H  P. Erdos and P. Turan, On a problem in the elementary theory of numbers,
-    Amer. Math. Monthly 41 (1934), 608-611.
+%H P. Erdos and P. Turan, On a problem in the elementary theory of numbers, Amer. Math. Monthly 41 (1934), 608-611.
 
-%H  B.-L. Wu, Sumsets with restricted number of prime factors,
-    Lith. Math. J. 59 (2019), 251-260.
+%H B.-L. Wu, Sumsets with restricted number of prime factors, Lith. Math. J. 59 (2019), 251-260.
 
-%H  E. B. Fueredi, Erdos-Turan-tetel es altalanositasai, BSc thesis, ELTE, 2024.
+%H E. B. Fueredi, Erdos-Turan-tetel es altalanositasai, BSc thesis, ELTE, 2024.
 
-%H  L. Szalay and V. Ziegler, On an S-unit variant of Diophantine m-tuples,
-    Publ. Math. Debrecen 83 (2013), 97-121.
+%H L. Szalay and V. Ziegler, On an S-unit variant of Diophantine m-tuples, Publ. Math. Debrecen 83 (2013), 97-121.
 
-%H  Junho Lee, <a href="https://doi.org/10.5281/zenodo.21991689">Search code and computed values for E_1(k) and E_2(k)</a>, Zenodo, 2026.
+%H Junho Lee, <a href="https://doi.org/10.5281/zenodo.21991689">Search code and computed values for E_1(k) and E_2(k)</a>, Zenodo, 2026.
 
-%H  Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a> (GitHub repository)
+%H Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a> (GitHub repository)
 
-%K  nonn,hard,more
+%K nonn,hard,more
 
-%A  Junho Lee, [DATE]
+%A Junho Lee, [DATE]
