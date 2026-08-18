@@ -1,4 +1,4 @@
-<!-- DOI badge: fill in after Zenodo release -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21991689.svg)](https://doi.org/10.5281/zenodo.21991689)
 
 # Erdős Problem #126 — computational search
 
