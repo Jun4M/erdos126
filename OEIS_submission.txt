@@ -62,7 +62,9 @@
 %H  L. Szalay and V. Ziegler, On an S-unit variant of Diophantine m-tuples,
     Publ. Math. Debrecen 83 (2013), 97-121.
 
-%H  Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a>
+%H  Junho Lee, <a href="https://doi.org/10.5281/zenodo.21991689">Search code and computed values for E_1(k) and E_2(k)</a>, Zenodo, 2026.
+
+%H  Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a> (GitHub repository)
 
 %K  nonn,hard,more
 

@@ -61,7 +61,9 @@ A-number, then replace A______ below with that number.
 
 %H  T. F. Bloom, <a href="https://www.erdosproblems.com/126">Erdos Problem #126</a>
 
-%H  Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a>
+%H  Junho Lee, <a href="https://doi.org/10.5281/zenodo.21991689">Search code and computed values for E_1(k) and E_2(k)</a>, Zenodo, 2026.
+
+%H  Junho Lee, <a href="https://github.com/Jun4M/erdos126">Search code and data</a> (GitHub repository)
 
 %Y  Cf. A______ (the same quantity without dividing by the gcd).
 
