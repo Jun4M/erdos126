@@ -12,8 +12,8 @@ authors:
     orcid: "https://orcid.org/0009-0008-1540-7694"
     affiliation: "Kyung Hee University"
 license: MIT
-version: 1.0.0
-date-released: 2026-08-18
+version: 1.0.1
+date-released: 2026-08-19
 repository-code: "https://github.com/Jun4M/erdos126"
 keywords:
   - number theory
