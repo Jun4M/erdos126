@@ -150,3 +150,5 @@ search on that pool then finishes quickly.
 - E. B. Füredi, *Erdős–Turán-tétel és általánosításai*, BSc thesis, ELTE, 2024
   (supervisor K. Gyarmati). Computes the equivalent quantity f(n) for n = 5..8.
 - T. F. Bloom, *Erdős Problem #126*, https://www.erdosproblems.com/126
+
+## Note on AI assistance

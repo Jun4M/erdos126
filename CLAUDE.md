@@ -7,6 +7,9 @@ repository root; do not introduce `src/`, `data/` or similar directories.
 
 - After modifying `data.txt`, always run `python3 verify_data.py` and confirm
   the final line reads `30 witness sets checked -> ALL PASS`.
+- Never add `Co-Authored-By` (or any other authorship) trailers to commit
+  messages. OEIS policy forbids claiming AI as an author or co-author, and the
+  trailers read as exactly that claim.
 
 `verify_data.py` re-derives every witness from scratch (factoring each pairwise
 value with sympy, no clique code) and checks it against the claimed cardinality,
