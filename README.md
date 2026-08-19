@@ -152,3 +152,12 @@ search on that pool then finishes quickly.
 - T. F. Bloom, *Erdős Problem #126*, https://www.erdosproblems.com/126
 
 ## Note on AI assistance
+
+The search programs in this repository were written with AI assistance. Every
+value reported here was cross-checked by two implementations with deliberately
+different designs (see Verification above), and every witness set was re-derived
+by direct factorisation with no clique code involved — a check that caught one
+transcription error, a spurious 41 in the k = 13 witness. The `Co-Authored-By`
+trailers on the early commits were inserted automatically by the tooling and are
+not a claim of authorship; responsibility for the contents of this repository
+rests with the author.
